@@ -1,5 +1,5 @@
 /* 
-用来返回防抖函数的工具函数
+用来返回防抖函数的工具函数 -- 事件被触发的N秒后执行，如果在这N秒内则重新计时
 */
 export function debounce(callback, delay) {
   return function (event) {
