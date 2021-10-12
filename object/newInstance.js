@@ -49,5 +49,6 @@ export function newInstance(Fn, ...args) {
      // 执行构造函数 传入剩余参数
     var result = constructor.apply(context, args)
      // 如果返回结果是对象，就直接返回，否则返回 context 对象
+     // 如果构造函数内部有return语句，而且return后面跟着一个对象，new命令会返回return语句指定的对象；否则，就会不管return语句，返回this对象。
     return (typeof result === 'object' && result != null) ? result : context
   }
