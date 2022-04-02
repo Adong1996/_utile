@@ -26,6 +26,14 @@ export function getDecimal(val) {
   val = String(val)
   return val.replace(/[^\d.]/g, '').replace(/\.{2,}/g, '.').replace('.', '$#$').replace(/\./g, '').replace('$#$', '.').replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3').replace(/^\./g, '')
 }
+// 获取时间格式 yyyy-MM-dd
+    getTimeType() {
+      let date = new Date();
+      let mon = date.getMonth() + 1;
+      let day = date.getDate();
+      let  currDate = date.getFullYear() + "-"+ (mon<10?"0"+mon:mon) + "-"+(day<10?"0"+day:day);
+      return currDate
+    }
 let utils = {}
 /*输入框只能输入数字和小数点或整数
  * value：需要修改的值必要参数
